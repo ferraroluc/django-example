@@ -40,7 +40,7 @@ pip install Django djangorestframework djongo
 mkdir server
 cd server
 django-admin startproject server_django_example .
-python manage.py startapp tutorials
+python manage.py startapp app
 ```
 
 2. Run the server
