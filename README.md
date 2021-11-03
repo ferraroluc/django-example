@@ -41,6 +41,9 @@ mkdir server
 cd server
 django-admin startproject server_django_example .
 python manage.py startapp app
+python manage.py makemigrations app
+python manage.py migrate app
+python manage.py runserver 8080
 ```
 
 2. Run the server
@@ -56,8 +59,10 @@ python manage.py migrate
 ## REST
 | __Method__    | __Route__         | __Use__                           |
 |---------------|-------------------|-----------------------------------|
-| POST          | /api/pet/         | Create a pet                      |
 | GET           | /api/pet/         | Get all pets                      |
-| GET           | /api/pet/search/  | Search pets                       |
-| DELETE        | /api/pet/         | Delete all the pets               |
+| POST          | /api/pet/         | Create a pet                      |
+| GET           | /api/pet/:id      | Search pet by Id                  |
+| PUT           | /api/pet/:id      | Modify a pet                      |
+| DELETE        | /api/pet/:id      | Delete pet by Id                  |
+| GET           | /api/pet/search   | Search pet by attributes          |
 | GET           | /api/login/       | Login with an user and password   |
