@@ -37,7 +37,7 @@ def pet_detail(request, pk):
         return JsonResponse(serializer.data)
 
     elif request.method == 'PUT':
-        data = request.GET
+        data = request.data
         serializer = PetSerializer(pet, data=data)
         if serializer.is_valid():
             serializer.save()

@@ -1,0 +1,24 @@
+<h2>List of registered pets</h2>
+
+<table>
+    <thead>
+        <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Exact?</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of itemList">
+        <td>{{item.id}}</td>
+        <td>{{item.name}}</td>
+        <td>{{item.age}}</td>
+        <td>{{item.exact}}</td>
+        <td>
+            <button mat-raised-button (click)="edit(item.id)">Edit</button>
+            <button mat-raised-button (click)="delete(item.id)">Delete</button>
+        </td>
+        </tr>
+    </tbody>
+</table>

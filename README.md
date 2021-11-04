@@ -56,6 +56,21 @@ python3 manage.py runserver
 python manage.py migrate
 ```
 
+## Frontend
+We will use Angular for the frontend
+
+```bash
+ng new client
+? Would you like to add Angular routing? Yes
+? Which stylesheet format would you like to use? CSS
+
+ng g s services/client
+ng g c components/create-pet
+ng g c components/modify-pet
+ng g c components/pet-details
+ng g class models/client --type=model
+```
+
 ## REST
 | __Method__    | __Route__         | __Use__                           |
 |---------------|-------------------|-----------------------------------|

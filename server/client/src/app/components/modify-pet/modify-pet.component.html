@@ -1,0 +1,8 @@
+<p>modify-pet works!</p>
+
+<label>Pet Id: {{this.id}}</label><br>
+<label>Name: </label><input type="text" [(ngModel)]="name"><br>
+<label>Age: </label><input type="number" [(ngModel)]="age"><br>
+<label>Exact: </label><input type="boolean" [(ngModel)]="exact"><br><br>
+
+<button mat-raised-button (click)="save()">Save</button>
