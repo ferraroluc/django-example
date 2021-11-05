@@ -62,7 +62,10 @@ npm install
 ng serve
 ```
 
-## REST
+## Test
+Enter to [http://localhost:4200/pet](http://localhost:4200/pet)
+
+## API REST
 | __Method__    | __Route__         | __Use__                           |
 |---------------|-------------------|-----------------------------------|
 | GET           | /api/pet/         | Get all pets                      |
