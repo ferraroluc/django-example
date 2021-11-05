@@ -14,7 +14,7 @@ export class ModifyPetComponent implements OnInit {
 
   id:any = 0;
   name:any = "";
-  age:any = 0;
+  age:any = "";
   exact:any = true;
 
   constructor(

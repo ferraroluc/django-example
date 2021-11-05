@@ -1,8 +1,8 @@
-<p>Create a pet</p>
+<h3>Create a pet</h3>
 
 <label>Name: </label><input type="text" [(ngModel)]="name"><br>
-<label>Age: </label><input type="number" [(ngModel)]="age"><br>
-<label>Exact: </label><input type="boolean" [(ngModel)]="exact"><br><br>
+<label>Age: </label><input type="text" [(ngModel)]="age"><br>
+<label>Is exact? </label><input type="checkbox" [(ngModel)]="exact"><br><br>
 
 <button mat-raised-button (click)="create()">Create</button>
 <button mat-raised-button (click)="back()">Back</button>

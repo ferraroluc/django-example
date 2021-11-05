@@ -1,6 +1,5 @@
 <h2>List of registered pets</h2>
 
-
 <input placeholder="name" type="text" [(ngModel)]="name">
 <input placeholder="age" type="string" [(ngModel)]="age">
 <button mat-raised-button (click)="search()">Search</button>
@@ -11,7 +10,7 @@
         <th>Id</th>
         <th>Name</th>
         <th>Age</th>
-        <th>Exact?</th>
+        <th>Is exact?</th>
         </tr>
     </thead>
     <tbody>
@@ -19,7 +18,8 @@
         <td>{{item.id}}</td>
         <td>{{item.name}}</td>
         <td>{{item.age}}</td>
-        <td>{{item.exact}}</td>
+        <!-- <td>{{item.exact}}</td> -->
+        <td><input type="checkbox" [(ngModel)]="item.exact" onclick="return false;"></td>
         <td>
             <button mat-raised-button (click)="edit(item.id)">Edit</button>
             <button mat-raised-button (click)="delete(item.id)">Delete</button>

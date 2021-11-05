@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 export class CreatePetComponent implements OnInit {
 
   name:any = "";
-  age:any = 0;
+  age:any = "";
   exact:any = true;
 
   constructor(
