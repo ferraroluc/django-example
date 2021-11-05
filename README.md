@@ -1,7 +1,7 @@
 # django-example
-This project is a program that register pets. In this example, we will use Django as backend and Angular as frontend. The databse will be MongoDB.
+This project is a program that registers pets. In this example, we will use Django as the backend and Angular as the frontend. The database will be MongoDB.
 ## Database
-1. Install the database. in this case, we will use a MongoDB Docker.
+1. Install the database. In this case, we will use a MongoDB Docker.
 ```bash
 docker run -p 27017:27017 -v ~/docker/mongodb/data:/data/db --name django-test -d mongo
 ```
@@ -38,7 +38,7 @@ source .venv/bin/activate
 pip install Django djangorestframework djongo
 ```
 
-2. Migrate database
+2. Migrate the database
 ```bash
 cd server
 python manage.py makemigrations app
@@ -51,7 +51,7 @@ python manage.py runserver 8080
 ```
 
 ## Frontend
-We will use Angular for the frontend
+We will use Angular for the frontend.
 
 ```bash
 cd server/client
