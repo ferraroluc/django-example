@@ -3,7 +3,8 @@ This project is a program that registers pets. In this example, we will use Djan
 ## Database
 1. Install the database. In this case, we will use a MongoDB Docker.
 ```bash
-docker run -p 27017:27017 -v ~/docker/mongodb/data:/data/db --name django-test -d mongo
+sudo apt install docker.io
+docker run -p 27017:27017 -v ~/docker/mongodb/data:/data/db --name django-example -d mongo
 ```
 
 2. Connect to de MongoDB database
@@ -54,6 +55,8 @@ python manage.py runserver 8080
 We will use Angular for the frontend.
 
 ```bash
+sudo apt install npm
+npm install -g @angular/cli
 cd server/client
 npm install
 ng serve
