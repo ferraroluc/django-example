@@ -8,8 +8,8 @@ import { PetDetailsComponent } from './components/pet-details/pet-details.compon
 const routes: Routes = [
   { path: '', redirectTo: 'pet', pathMatch: 'full' },
   { path: 'pet', component: PetDetailsComponent },
-  { path: 'pet/:id', component: ModifyPetComponent },
-  { path: 'pet', component: CreatePetComponent }  
+  { path: 'pet/create', component: CreatePetComponent } ,
+  { path: 'pet/:id', component: ModifyPetComponent }
 ];
 
 @NgModule({

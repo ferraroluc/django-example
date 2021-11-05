@@ -9,6 +9,11 @@ import { ClientService } from '../../services/client.service';
 })
 export class PetDetailsComponent implements OnInit {
 
+  name:any = "";
+  age:any = "";
+
+  flagFilter:boolean = false;
+
   constructor(
     private clientService: ClientService,
     private router:Router
@@ -23,11 +28,28 @@ export class PetDetailsComponent implements OnInit {
     })
   }
 
-  edit = (id:any) => {
+  edit(id:any) {
     this.router.navigate(['/pet/', id]);
   }
 
-  delete = (id:any) => {
-    this.clientService.delete(id);
+  async delete(id:any) {
+    await this.clientService.delete(id).toPromise();
+    window.location.reload();
+  }
+
+  create() {
+    this.router.navigate(['/pet/create']);
+  }
+
+  async search() {
+    this.itemList = await this.clientService.findByValue(this.name, this.age).toPromise();
+    this.flagFilter = true;
+  }
+  
+  async clean() {
+    this.clientService.getAll().subscribe(res => {
+      this.itemList = res;
+    })
+    this.flagFilter = false;
   }
 }

@@ -33,7 +33,7 @@ export class ClientService {
     return this.http.delete(`${baseUrl}/${id}`);
   }
 
-  findByValue(value: any): Observable<Client[]> {
-    return this.http.get<Client[]>(`${baseUrl}?name=${value}`);
+  findByValue(name:any, age:any): Observable<Client[]> {
+    return this.http.get<Client[]>(`${baseUrl}/search?name=${name}&age=${age}`);
   }
 }

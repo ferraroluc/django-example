@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ClientService } from '../../services/client.service'
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-create-pet',
@@ -7,9 +9,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreatePetComponent implements OnInit {
 
-  constructor() { }
+  name:any = "";
+  age:any = 0;
+  exact:any = true;
+
+  constructor(
+    private clientService: ClientService,
+    private router: Router
+  ) { }
 
   ngOnInit(): void {
   }
 
+  async create() {
+    await this.clientService.create({
+      name: this.name,
+      age: this.age,
+      exact: this.exact
+    }).toPromise();
+
+    this.router.navigate(['/pet'])
+  }
+
+  back() {
+    this.router.navigate(['/pet'])
+  }
 }

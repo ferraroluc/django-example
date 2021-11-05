@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ClientService } from '../../services/client.service';
 import { Client } from '../../models/client.model';
-import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-modify-pet',
@@ -13,12 +12,6 @@ export class ModifyPetComponent implements OnInit {
 
   pet: Client = {}
 
-  // form: FormGroup = new FormGroup({
-  //   "name": new FormControl(),
-  //   "age": new FormControl(),
-  //   "exact": new FormControl()
-  // });
-
   id:any = 0;
   name:any = "";
   age:any = 0;
@@ -26,14 +19,14 @@ export class ModifyPetComponent implements OnInit {
 
   constructor(
     private clientService: ClientService,
-    private route:ActivatedRoute
+    private route:ActivatedRoute,
+    private router:Router
   ) { }
 
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id');
     this.clientService.get(id).subscribe(res => {
       this.pet = res;
-      // this.form.controls["name"].setValue(this.pet.name);
       this.id = id;
       this.name = res.name;
       this.age = res.age;
@@ -47,6 +40,12 @@ export class ModifyPetComponent implements OnInit {
       age: this.age,
       exact: this.exact
     }).toPromise();
+
+    this.router.navigate(['/pet'])
+  }
+
+  back() {
+    this.router.navigate(['/pet'])
   }
 
 }

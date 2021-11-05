@@ -1,1 +1,8 @@
-<p>create-pet works!</p>
+<p>Create a pet</p>
+
+<label>Name: </label><input type="text" [(ngModel)]="name"><br>
+<label>Age: </label><input type="number" [(ngModel)]="age"><br>
+<label>Exact: </label><input type="boolean" [(ngModel)]="exact"><br><br>
+
+<button mat-raised-button (click)="create()">Create</button>
+<button mat-raised-button (click)="back()">Back</button>
