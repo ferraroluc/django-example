@@ -56,8 +56,8 @@ We will use Angular for the frontend.
 
 ```bash
 sudo apt install npm
-npm install -g @angular/cli
-cd server/client
+sudo npm install -g @angular/cli
+cd client
 npm install
 ng serve
 ```
