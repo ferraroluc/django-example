@@ -36,12 +36,16 @@ db.createUser(
 sudo apt install python3 python3.9-venv
 python3 -m venv .venv
 source .venv/bin/activate
+cd server
+pip install -r requirements.txt
+```
+Or you can install manually:
+```bash
 pip install Django djangorestframework djongo
 ```
 
 2. Migrate the database
 ```bash
-cd server
 python manage.py makemigrations app
 python manage.py migrate app
 ```
